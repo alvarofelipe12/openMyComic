@@ -7,7 +7,8 @@ import { Injectable } from '@angular/core';
 export class ComicService {
 
     /**
-     * Proxy Server to avoid CORS problems
+     * Proxy Server to avoid CORS problems in dev,
+     * This can't be used in a production env.
      */
     private proxyServerURL = 'https://cors-anywhere.herokuapp.com/';
 
@@ -27,11 +28,13 @@ export class ComicService {
 
     /**
      * Get a ramdomized comic
+     * @param num number of the comic (optional)
      * @author Alvaro Felipe Garcia Mendez
      * @since 1/11/2020
      */
-    public getComicData() {
-        const url = this.proxyServerURL + this.xkdcURL + this.randomNumber(0, 2252) + this.jsonURL;
+    public getComicData(num?: number) {
+        const comicNumber = num ? String(num) : this.randomNumber(0, 2252);
+        const url = this.proxyServerURL + this.xkdcURL + comicNumber + this.jsonURL;
         return this.http.get(url);
     }
 
@@ -46,4 +49,16 @@ export class ComicService {
         return String(Math.floor(Math.random() * (max - min + 1)) + min);
     }
 
+    public getRating(comicNumber: number) {
+        const search = localStorage.getItem(String(comicNumber));
+        if (search) {
+            return Number(search);
+        } else {
+            return null;
+        }
+    }
+
+    public setRating(comicNumber: number, rating: number) {
+        localStorage.setItem(String(comicNumber), String(rating));
+    }
 }

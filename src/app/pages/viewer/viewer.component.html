@@ -1,19 +1,31 @@
-<p>{{comic.title }}</p>
-<img src="{{comic.img}}" alt="{{comic.alt}}">
-<button type="button" class="btn btn-primary">
-  First
-</button>
-<button type="button" class="btn btn-primary">
-  Previous
-</button>
-<button type="button" class="btn btn-primary">
-  Next
-</button>
-<button type="button" class="btn btn-primary">
-  Last
-</button>
-<div>
-  <rating [(ngModel)]="rate" [max]="max" [readonly]="isReadonly"></rating>
+<div class="container text-center">
+  <div class="btn-group">
+    <button type="button" class="btn btn-dark" (click)="navComic('')">
+      First
+    </button>
+    <button type="button" class="btn btn-dark" (click)="navComic('prev')">
+      Previous
+    </button>
+    <button type="button" class="btn btn-dark" (click)="navComic('next')">
+      Next
+    </button>
+    <button type="button" class="btn btn-dark" (click)="navComic('last')">
+      Last
+    </button>
+  </div>
   <hr>
-  <pre>Rate: <strong>{{rate}}</strong> </pre>
+  <p>{{comic.title }}</p>
+  <img src="{{comic.img}}" alt="{{comic.alt}}">
+
+  <div>
+    <rating [(ngModel)]="rate" [max]="max" [readonly]="isReadonly" (onHover)="hoveringOver($event)"
+      (onLeave)="resetStar()" (click)="setRating()"></rating>
+    <span class="label" *ngIf="overStar"> {{overStar}}</span>
+    <hr>
+    <pre>Rate: <strong><ng-container *ngIf="rate; else elseTemplate">{{rate}}
+    </ng-container>
+    <ng-template #elseTemplate>Unrated
+    </ng-template>
+    </strong> </pre>
+  </div>
 </div>
