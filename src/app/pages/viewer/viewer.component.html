@@ -1,0 +1,19 @@
+<p>{{comic.title }}</p>
+<img src="{{comic.img}}" alt="{{comic.alt}}">
+<button type="button" class="btn btn-primary">
+  First
+</button>
+<button type="button" class="btn btn-primary">
+  Previous
+</button>
+<button type="button" class="btn btn-primary">
+  Next
+</button>
+<button type="button" class="btn btn-primary">
+  Last
+</button>
+<div>
+  <rating [(ngModel)]="rate" [max]="max" [readonly]="isReadonly"></rating>
+  <hr>
+  <pre>Rate: <strong>{{rate}}</strong> </pre>
+</div>
