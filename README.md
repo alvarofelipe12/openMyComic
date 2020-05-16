@@ -1,5 +1,7 @@
 [![Build Status](https://travis-ci.org/alvarofelipe12/openMyComic.svg?branch=master)](https://travis-ci.org/alvarofelipe12/openMyComic)
 
+See the demo: [https://openmycomic.web.app/](https://openmycomic.web.app/)
+
 # OpenMyComic
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.2.2. The default serve option gets the webpack compilation.
