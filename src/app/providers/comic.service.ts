@@ -34,7 +34,7 @@ export class ComicService {
      */
     public getComicData(num?: number) {
         const comicNumber = num ? String(num) : this.randomNumber(0, 2252);
-        const url = this.proxyServerURL + this.xkdcURL + comicNumber + this.jsonURL;
+        const url = this.xkdcURL + comicNumber + this.jsonURL;
         return this.http.get(url);
     }
 
