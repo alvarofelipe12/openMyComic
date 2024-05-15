@@ -20,3 +20,6 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 Check Github pages for deploy source branch master and folder docs
 
 
+nvm use 10
+
+
