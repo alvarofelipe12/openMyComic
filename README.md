@@ -1,6 +1,7 @@
 [![Build Status](https://travis-ci.org/alvarofelipe12/openMyComic.svg?branch=master)](https://travis-ci.org/alvarofelipe12/openMyComic)
 
-See the demo: [https://openmycomic.web.app/](https://openmycomic.web.app/)
+See the demo: https://alvarofelipe12.github.io/openMyComic/
+Old demo website [https://openmycomic.web.app/](https://openmycomic.web.app/)
 
 # OpenMyComic
 
@@ -16,7 +17,7 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 
 ## Deploy
 
-`ng build --prod` then commit and push
+`npm run build` then commit and push
 Check Github pages for deploy source branch master and folder docs
 
 
