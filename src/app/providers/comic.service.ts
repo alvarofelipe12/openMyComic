@@ -10,7 +10,7 @@ export class ComicService {
      * Proxy Server to avoid CORS problems in dev,
      * This can't be used in a production env.
      */
-  private proxyServerURL = 'https://let-me-apy.vercel.app/';
+  private proxyServerURL = 'https://let-me-apy.vercel.app/cors/';
 
     /**
      * Base url for xkdc
