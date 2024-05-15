@@ -10,7 +10,7 @@ export class ComicService {
      * Proxy Server to avoid CORS problems in dev,
      * This can't be used in a production env.
      */
-  private proxyServerURL = 'https://the-ultimate-api-challenge.herokuapp.com/';
+  private proxyServerURL = 'https://let-me-apy.vercel.app/';
 
     /**
      * Base url for xkdc
@@ -34,7 +34,7 @@ export class ComicService {
      */
     public getComicData(num?: number) {
         const comicNumber = num ? String(num) : this.randomNumber(0, 2252);
-      const url = this.proxyServerURL + this.xkdcURL + comicNumber + this.jsonURL;
+      const url = this.proxyServerURL + encodeURIComponent(this.xkdcURL + comicNumber + this.jsonURL);
         return this.http.get(url);
     }
 
